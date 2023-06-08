@@ -2,7 +2,7 @@
 	<div class="system-menu-container layout-pd">
 		<el-card shadow="hover">
 			<div class="system-menu-search mb15">
-				<el-input size="default" placeholder="请输入菜单名称" style="max-width: 180px"> </el-input>
+				<el-input size="default" placeholder="请输入菜单名称" style="max-width: 180px" v-model="menuNameSearch"> </el-input>
 				<el-button size="default" type="primary" class="ml10">
 					<el-icon>
 						<ele-Search />
@@ -75,6 +75,7 @@ const MenuDialog = defineAsyncComponent(() => import('/@/views/system/menu/dialo
 
 // 定义变量内容
 const stores = useRoutesList();
+const menuNameSearch = ref('');
 const { routesList } = storeToRefs(stores);
 const menuDialogRef = ref();
 const state = reactive({
@@ -88,7 +89,7 @@ const state = reactive({
 const getTableData = () => {
 	state.tableData.loading = true;
 	state.tableData.data = routesList.value;
-	setTimeout(() => {
+  setTimeout(() => {
 		state.tableData.loading = false;
 	}, 500);
 };

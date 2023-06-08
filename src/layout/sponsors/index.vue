@@ -37,7 +37,7 @@ const setCarouselShow = computed(() => {
 });
 // 关闭赞助商
 const onCloseSponsors = () => {
-	state.sponsors.isShow = false;
+	state.sponsors.isShow = true;
 };
 // 轮播图改变时
 const onCarouselChange = (e) => {

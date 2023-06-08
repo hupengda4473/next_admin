@@ -5,7 +5,7 @@
 		<Setings ref="setingsRef" v-show="setLockScreen" />
 		<CloseFull v-if="!themeConfig.isLockScreen" />
 		<Upgrade v-if="getVersion" />
-		<Sponsors />
+		<Sponsors v-if="setAdvertise"/>
 	</el-config-provider>
 </template>
 
@@ -20,6 +20,7 @@ import other from '/@/utils/other';
 import { Local, Session } from '/@/utils/storage';
 import setIntroduction from '/@/utils/setIconfont';
 import mittBus from './utils/mitt';
+import log from "../../vite-vue3-admin/src/core/permission/modules/sys/log";
 
 // 引入组件
 const LockScreen = defineAsyncComponent(() => import('/@/layout/lockScreen/index.vue'));
@@ -34,6 +35,7 @@ const route = useRoute();
 const stores = useTagsViewRoutes();
 const storesThemeConfig = useThemeConfig();
 const { themeConfig } = storeToRefs(storesThemeConfig);
+const { customConfig } = storeToRefs(storesThemeConfig);
 
 // 设置锁屏时组件显示隐藏
 const setLockScreen = computed(() => {
@@ -41,9 +43,14 @@ const setLockScreen = computed(() => {
 	// https://gitee.com/lyt-top/vue-next-admin/issues/I6AF8P
 	return themeConfig.value.isLockScreen ? themeConfig.value.lockScreenTime > 1 : themeConfig.value.lockScreenTime >= 0;
 });
+//是否显示广告
+const setAdvertise = computed(() => {
+  return customConfig.value.isShowAdvertise;
+});
 // 获取版本号
 const getVersion = computed(() => {
 	let isVersion = false;
+  if (!customConfig.value.showUpdate) return isVersion;
 	if (route.path !== '/login') {
 		if ((Local.get('version') && Local.get('version') !== __NEXT_VERSION__) || !Local.get('version')) isVersion = true;
 	}
