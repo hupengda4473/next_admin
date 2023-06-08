@@ -720,7 +720,7 @@ const init3DEarth = (globeRadius: any) => {
 			blendMode: 'lighter',
 			lineStyle: {
 				width: 1,
-				color: 'rgb(50, 50, 150)',
+				color: 'rgb(50, 50, 150)' ,
 				opacity: 0.1,
 			},
 			data: [],
