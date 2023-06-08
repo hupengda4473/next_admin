@@ -44,6 +44,59 @@ export const dynamicRoutes = [
 				},
 			},
 			{
+				path: '/visualizing',
+				name: '数据可视化',
+				component: () => import('/@/layout/routerView/parent.vue'),
+				redirect: '/visualizing/demo1',
+				meta: {
+					title: '数据可视化',
+					isLink: '',
+					isHide: false,
+					isKeepAlive: true,
+					isAffix: false,
+					isIframe: false,
+					roles: ['admin'],
+					icon: 'ele-ChatLineRound',
+				},
+				/**
+				 * 打开内置全屏
+				 * component 都为 `() => import('/@/layout/routerView/link.vue')`
+				 * isLink 链接为内置的路由地址，地址为 staticRoutes 中定义
+				 */
+				children: [
+					{
+						path: '/visualizing/visualizingLinkDemo1',
+						name: 'demo1',
+						component: () => import('/@/layout/routerView/link.vue'),
+						meta: {
+							title: 'demo1',
+							isLink: '/visualizingDemo1',
+							isHide: false,
+							isKeepAlive: false,
+							isAffix: false,
+							isIframe: false,
+							roles: ['admin'],
+							icon: 'iconfont icon-caozuo-wailian',
+						},
+					},
+					{
+						path: '/visualizing/visualizingLinkDemo2',
+						name: 'demo2',
+						component: () => import('/@/layout/routerView/link.vue'),
+						meta: {
+							title: 'demo2',
+							isLink: '/visualizingDemo2',
+							isHide: false,
+							isKeepAlive: false,
+							isAffix: false,
+							isIframe: false,
+							roles: ['admin'],
+							icon: 'iconfont icon-caozuo-wailian',
+						},
+					},
+				],
+			},
+			{
 				path: '/system',
 				name: 'system',
 				component: () => import('/@/layout/routerView/parent.vue'),
@@ -178,6 +231,22 @@ export const staticRoutes = [
 		component: () => import('/@/views/login/index.vue'),
 		meta: {
 			title: '登录',
+		},
+	},
+	{
+		path: '/visualizingDemo1',
+		name: 'visualizingDemo1',
+		component: () => import('/@/views/visualizing/demo1.vue'),
+		meta: {
+			title: 'demo1',
+		},
+	},
+	{
+		path: '/visualizingDemo2',
+		name: 'visualizingDemo2',
+		component: () => import('/@/views/visualizing/demo2.vue'),
+		meta: {
+			title: 'demo2',
 		},
 	},
 ];
