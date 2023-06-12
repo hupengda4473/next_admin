@@ -697,10 +697,10 @@ const init3DEarth = (globeRadius: any) => {
 			shading: 'realistic',
 			light: {
 				ambient: {
-					intensity: 0.4,
+					intensity: 1,
 				},
 				main: {
-					intensity: 0.4,
+					intensity: 1,
 				},
 			},
 			viewControl: {

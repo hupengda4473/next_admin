@@ -10,6 +10,10 @@ import { defineStore } from 'pinia';
  */
 export const useThemeConfig = defineStore('themeConfig', {
 	state: () => ({
+		customConfig: {
+			isShowAdvertise: false,//显示广告
+			showUpdate: false,//推荐更新
+		},
 		themeConfig: {
 			"isDrawer": false,
 			"primary": "#409eff",
@@ -28,13 +32,13 @@ export const useThemeConfig = defineStore('themeConfig', {
 			"isCollapse": false,
 			"isUniqueOpened": true,
 			"isFixedHeader": false,
-			"isFixedHeaderChange": false,
-			"isClassicSplitMenu": false,
-			"isLockScreen": true,
-			"lockScreenTime": 60 * 10,
+			"isFixedHeaderChange": true,
+			"isClassicSplitMenu": true,
+			"isLockScreen": false,
+			"lockScreenTime": 30,
 			"isShowLogo": true,
 			"isShowLogoChange": false,
-			"isBreadcrumb": true,
+			"isBreadcrumb": false,
 			"isTagsview": true,
 			"isBreadcrumbIcon": false,
 			"isTagsviewIcon": true,
@@ -46,22 +50,18 @@ export const useThemeConfig = defineStore('themeConfig', {
 			"isInvert": false,
 			"isWartermark": true,
 			"wartermarkText": "唐山现代工控1",
-			"tagsStyle": "tags-style-five",
+			"tagsStyle": "tags-style-four",
 			"animation": "slide-right",
 			"columnsAsideStyle": "columns-round",
 			"columnsAsideLayout": "columns-vertical",
-			"layout": "defaults",
+			"layout": "classic",
 			"isRequestRoutes": false,
 			"globalTitle": "唐山现代工控2",
 			"globalViceTitle": "唐山现代工控3",
 			"globalViceTitleMsg": "专注、专业、高效",
 			"globalI18n": "zh-cn",
 			"globalComponentSize": "large"
-		},
-		customConfig: {
-			isShowAdvertise: false,//显示广告
-			showUpdate: false,//推荐更新
-		},
+		}
 	}),
 	actions: {
 		setThemeConfig(data) {
