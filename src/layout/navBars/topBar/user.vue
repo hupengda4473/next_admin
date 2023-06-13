@@ -1,17 +1,17 @@
 <template>
 	<div class="layout-navbars-breadcrumb-user pr15" :style="{ flex: layoutUserFlexNum }">
-		<el-dropdown :show-timeout="70" :hide-timeout="50" trigger="click" @command="onComponentSizeChange">
-			<div class="layout-navbars-breadcrumb-user-icon">
-				<i class="iconfont icon-ziti" title="组件大小"></i>
-			</div>
-			<template #dropdown>
-				<el-dropdown-menu>
-					<el-dropdown-item command="large" :disabled="state.disabledSize === 'large'">大型</el-dropdown-item>
-					<el-dropdown-item command="default" :disabled="state.disabledSize === 'default'">默认</el-dropdown-item>
-					<el-dropdown-item command="small" :disabled="state.disabledSize === 'small'">小型</el-dropdown-item>
-				</el-dropdown-menu>
-			</template>
-		</el-dropdown>
+<!--		<el-dropdown :show-timeout="70" :hide-timeout="50" trigger="click" @command="onComponentSizeChange">-->
+<!--			<div class="layout-navbars-breadcrumb-user-icon">-->
+<!--				<i class="iconfont icon-ziti" title="组件大小"></i>-->
+<!--			</div>-->
+<!--			<template #dropdown>-->
+<!--				<el-dropdown-menu>-->
+<!--					<el-dropdown-item command="large" :disabled="state.disabledSize === 'large'">大型</el-dropdown-item>-->
+<!--					<el-dropdown-item command="default" :disabled="state.disabledSize === 'default'">默认</el-dropdown-item>-->
+<!--					<el-dropdown-item command="small" :disabled="state.disabledSize === 'small'">小型</el-dropdown-item>-->
+<!--				</el-dropdown-menu>-->
+<!--			</template>-->
+<!--		</el-dropdown>-->
 		<div class="layout-navbars-breadcrumb-user-icon" @click="onSearchClick">
 			<el-icon title="菜单搜索">
 				<ele-Search />

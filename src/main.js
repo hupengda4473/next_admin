@@ -9,6 +9,7 @@ import ElementPlus from 'element-plus';
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import 'element-plus/dist/index.css'
 import '/@/theme/index.scss';
+import '/@/assets/style/less/index.less';
 
 /*注册全局常用组件*/
 import format from './utils/timeTool'
