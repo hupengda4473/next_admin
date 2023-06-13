@@ -20,7 +20,7 @@ import other from '/@/utils/other';
 import { Local, Session } from '/@/utils/storage';
 import setIntroduction from '/@/utils/setIconfont';
 import mittBus from './utils/mitt';
-import log from "../../vite-vue3-admin/src/core/permission/modules/sys/log";
+// import log from "../../vite-vue3-admin/src/core/permission/modules/sys/log";
 
 // 引入组件
 const LockScreen = defineAsyncComponent(() => import('/@/layout/lockScreen/index.vue'));

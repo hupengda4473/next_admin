@@ -1,5 +1,5 @@
 <template>
-test22-2
+<div>test22-1</div>
 </template>
 
 <script>
